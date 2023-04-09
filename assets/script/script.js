@@ -88,11 +88,25 @@ function squareMoves(squareId) {
     checkWin();
 }
 
+/**
+ * This function check if the game is finished show the full image of finished puzzle
+ */
 function checkWin() {
+    const correctOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    const currentOrder = photoArray.slice(0, 9);
 
+    if (currentOrder.every((val, index) => val === correctOrder[index])) {
+        replacePhotoArray();
+    }
 }
 
+/**
+ * This function replace array to full size picture of finished game
+ */
 function replacePhotoArray() {
+    folderSelect = document.getElementById("folder-select");
+    chosenFolder = folderSelect.value;
 
+    document.getElementById("game-container").innerHTML = `<img class="win-photo" src= 'assets/images/${chosenFolder}/${chosenFolder}.webp' alt="${chosenFolder}">`;
 }
 
