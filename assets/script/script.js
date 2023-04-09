@@ -221,3 +221,38 @@ function showExampleImage(chosenFolder) {
         imgElement.alt = 'colors';
     }
 }
+
+/**
+ * This function add music file to html with loop play mode. Adds play and stop possibility.
+ */
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("loop", "true"); // add loop attribute
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    };
+
+    this.stop = function () {
+        this.sound.pause();
+        this.sound.currentTime = 0;
+    };
+}
+
+// create sound object
+var sound = new sound("assets/music/Blue_Dot_Sessions_-_Slow_Rollout.mp3");
+
+// link custom controls to the sound object
+let playButton = document.getElementsByClassName('play-button');
+
+playButton.addEventListener("click", () => {
+    sound.play();
+});
+
+let stopButton = document.getElementsByClassName('stop-button');
+stopButton.addEventListener("click", function () {
+    sound.stop();
+});

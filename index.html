@@ -44,7 +44,7 @@
     </div>
     <div id="congrats-modal">
         <span class="close">&times;</span>
-        <h4 id="congrats"><br> Congrats! You managed to solve the Puzzle!</h4>
+        <h4 id="congrats"><br> Congrats! You manage to solve the Puzzle!</h4>
     </div>
     <select id="folder-select">
         <option value="triangle">Triangle</option>
@@ -61,11 +61,18 @@
         <button id="modal-button" type="button">Rules</button>
         <button id="shuffle-button" type="button">Reshuffle</button>
         <button id="start-button" type="button">Start Game</button>
+
+        <button class="play-button" aria-label="play music" onclick="sound.play()" type="button">
+            <ion-icon name="volume-high-outline"></ion-icon>
         </button>
-      
+        <button class="stop-button" aria-label="stop music" onclick="sound.stop()" type="button">
+            <ion-icon name="volume-mute-outline"></ion-icon>
+        </button>
+
     </div>
     <script src="assets/script/script.js"></script>
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 

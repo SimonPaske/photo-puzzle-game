@@ -222,4 +222,30 @@ header {
     display: inline-block;
 }
 
+.play-button {
+    bottom: 5%;
+    width: 5%;
+    right: 12%;
+
+    float: left;
+}
+
+.stop-button {
+    bottom: 5%;
+    right: 5%;
+    width: 5%;
+    float: right;
+}
+
+.play-button,
+.stop-button {
+    height: fit-content;
+    cursor: pointer;
+    position: absolute;
+    font-size: 3vw;
+    background-color: transparent;
+    color: white;
+    bottom: 1%;
+    border-radius: 12px;
+}
 
