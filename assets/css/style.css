@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(47, 79, 79, 0.691);
+    font-family: 'Grandstander', sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+}
+
+.h_text,
+#congrats {
+    color: white;
+    font-size: 5vw;
+    font-weight: 400;
+    text-align: center;
+    padding: 1%;
+    margin: 0;
+}
+
+header {
+    margin: 0;
+    height: min-content;
+    align-content: center;
+    align-items: center;
+}
+
