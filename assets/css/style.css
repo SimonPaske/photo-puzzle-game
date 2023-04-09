@@ -28,3 +28,198 @@ header {
     align-items: center;
 }
 
+#game-container {
+    width: 50%;
+    height: 50%;
+    padding: 5%;
+    justify-items: center;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    /* box-shadow: 5px 0px 35px 15px black; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+    padding-bottom: 5%;
+}
+
+#square0,
+#square1,
+#square2,
+#square3,
+#square4,
+#square5,
+#square6,
+#square7,
+#square8 {
+    width: 30%;
+    height: 30%;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid white;
+    box-shadow: 5px 0px 35px 5px black;
+}
+
+#modal-button,
+#moves,
+#shuffle-button,
+#folder-select {
+    border-radius: 12px;
+    float: right;
+    color: white;
+    text-align: left;
+    right: 1%;
+    position: absolute;
+    background-color: transparent;
+    font-size: 2vw;
+    font-family: 'Grandstander', sans-serif;
+    padding: 10px;
+    width: 19%;
+}
+
+.modal-text,
+#congrats {
+    font-family: "industry-inc-inline-stroke", sans-serif;
+    font-size: medium;
+    font-weight: 200;
+    color: white;
+}
+
+#modal-box {
+    background-color: rgba(47, 79, 79, 0.9);
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-content: center;
+    border: 1px solid white;
+    box-shadow: 5px 0px 65px 15px whitesmoke;
+    display: none;
+    z-index: 999;
+    overflow: auto;
+    position: fixed;
+}
+
+.modal-text,
+#congrats {
+    font-family: "industry-inc-inline-stroke", sans-serif;
+    font-size: medium;
+    font-weight: 200;
+    color: white;
+}
+
+#modal-box {
+    background-color: rgba(47, 79, 79, 0.9);
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-content: center;
+    border: 1px solid white;
+    box-shadow: 5px 0px 65px 15px whitesmoke;
+    display: none;
+    z-index: 999;
+    overflow: auto;
+    position: fixed;
+}
+
+@keyframes transmodal {
+    from {background-color: rgb(255, 255, 255);}
+    to {background-color: rgba(47, 79, 79, 0.9);}
+}
+
+#congrats-modal {
+    animation: transmodal 1.6s ease;
+    background-color: rgba(47, 79, 79, 0.9);
+    width: 50%;
+    padding: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#start-button {
+    font-size: 3vh;
+    font-weight: 200;
+    font-family: 'Grandstander', sans-serif;
+    width: 25%;
+    height: auto;
+    margin-top: 5%;
+    padding: 1%;
+    border-radius: 12px;
+    border: black 1px solid;
+    box-shadow: 5px 0px 65px 15px whitesmoke;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    left: 50%;
+    bottom: 3vh;
+    transform: translateX(-60%);
+    background-color: white;
+    color: black;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.win-photo {
+    width: 90%;
+    height: auto;
+    display: flex;
+    padding: 6%;
+}
+
+#modal-button {
+    top: 30%;
+    margin: 1vw 0;
+}
+
+#shuffle-button {
+    top: 35%;
+    margin: 6vw 0;
+}
+
+#moves {
+    top: 5%;
+    margin: 12vh 0;
+}
+
+#folder-select {
+    top: 60%;
+    margin: 12vh 0;
+}
+
+#buttons {
+    display: inline-block;
+}
+
+

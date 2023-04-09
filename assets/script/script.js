@@ -1,3 +1,41 @@
+let countMove = 0;
+let emptySquareIndex;
+
+let folderSelect = document.getElementById("folder-select");
+let chosenFolder = folderSelect.value;
+
+const photoArray = [];
+
+let startGame = document.getElementById("start-button");
+startGame.addEventListener("click", generatePuzzle);
+
+let shuffleButton = document.getElementById("shuffle-button");
+shuffleButton.addEventListener("click", shuffleArray);
+
+document.getElementById("folder-select");
+
+folderSelect.addEventListener("change", () => {
+    console.log("Folder selected:", folderSelect.value);
+    console.log(photoArray);
+
+    replacePhotoArray();
+    showExampleImage(chosenFolder);
+    startGame.style.display = "block";
+    countMove = 0;
+
+});
+
+function generatePuzzle() {
+    fillArray();
+    shuffleArray();
+    showExampleImage(chosenFolder);
+
+
+    startGame.style.display = "none";
+    document.getElementById("move-counter").textContent = 0;
+    countMove = 0;
+    console.log(photoArray);
+}
 
 /**
  * This function fills the game board with squares and adds photos to them.
@@ -110,3 +148,20 @@ function replacePhotoArray() {
     document.getElementById("game-container").innerHTML = `<img class="win-photo" src= 'assets/images/${chosenFolder}/${chosenFolder}.webp' alt="${chosenFolder}">`;
 }
 
+let modalBox = document.getElementById("modal-box");
+let modalButton = document.getElementById("modal-button");
+let span = document.getElementsByClassName("close")[0];
+
+modalButton.onclick = () => {
+    modalBox.style.display = "block";
+};
+
+span.onclick = () => {
+    modalBox.style.display = "none";
+};
+
+window.onclick = (event) => {
+    if (event.target == modalBox) {
+        modalBox.style.display = "none";
+    }
+};

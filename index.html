@@ -21,7 +21,7 @@
     <div id="game-container"></div>
 
     <div id="modal-box">
- 
+        <span class="close">&times;</span>
         <p class="modal-text"><br>
             The 3x3 sliding puzzle game consists of a 3x3 grid with eight tiles and one empty
             space.
@@ -42,7 +42,10 @@
             Enjoy the challenge and have fun!
         </p>
     </div>
- 
+    <div id="congrats-modal">
+        <span class="close">&times;</span>
+        <h4 id="congrats"><br> Congrats! You manage to solve the Puzzle!</h4>
+    </div>
     <select id="folder-select">
         <option value="triangle">Triangle</option>
         <option value="nature">Nature</option>
@@ -51,10 +54,10 @@
         <option value="colors">Colors</option>
     </select>
     <div id="buttons">
-            <p id="moves">Moves:
-                <span id="move-counter">
-                    0</span>
-            </p>
+        <p id="moves">Moves:
+            <span id="move-counter">
+                0</span>
+        </p>
         <button id="modal-button" type="button">Rules</button>
         <button id="shuffle-button" type="button">Reshuffle</button>
         <button id="start-button" type="button">Start Game</button>
