@@ -59,8 +59,11 @@ function fillArray() {
         photoArray[i] = i;
         square.addEventListener("click", () => {
             squareMoves(square.id);
+            
+            console.log(square);
         });
     }
+    console.log('fill array',photoArray);
 }
 
 
@@ -83,6 +86,7 @@ function shuffleArray() {
     for (let i = 0; i < 9; i++) {
         document.getElementById(`square${i}`).src = `assets/images/${chosenFolder}/0${photoArray[i]}.webp`;
     }
+    
 }
 
 /**
@@ -94,7 +98,7 @@ function moveCounter() {
     if (moveCounter) {
         // Check if element exists
         moveCounter.textContent = countMove; // Update move counter display
-    }
+    } console.log('moves', countMove);
 }
 
 /**
@@ -130,6 +134,7 @@ function squareMoves(squareId) {
                 `square${i}`
             ).src = `assets/images/${chosenFolder}/0${photoArray[i]}.webp`;
         }
+        console.log('empty square', squareIndex);
         moveCounter();
     }
     checkWin();
@@ -145,6 +150,7 @@ function checkWin() {
     if (currentOrder.every((val, index) => val === correctOrder[index])) {
         replacePhotoArray();
         congratsModal();
+        console.log('you win',);
 
         startGame.style.display = "block";
     }
@@ -156,8 +162,9 @@ function checkWin() {
 function replacePhotoArray() {
     folderSelect = document.getElementById("folder-select");
     chosenFolder = folderSelect.value;
-
+    
     document.getElementById("game-container").innerHTML = `<img class="win-photo" src= 'assets/images/${chosenFolder}/${chosenFolder}.webp' alt="${chosenFolder}">`;
+    console.log('win photo');
 }
 
 let modalBox = document.getElementById("modal-box");
@@ -166,16 +173,19 @@ let span = document.getElementsByClassName("close")[0];
 
 modalButton.onclick = () => {
     modalBox.style.display = "block";
+    console.log('modalbutton');
 };
 
 span.onclick = () => {
     modalBox.style.display = "none";
+    console.log('modalspan');
 };
 
 window.onclick = (event) => {
     if (event.target == modalBox) {
         modalBox.style.display = "none";
     }
+    
 };
 
 /**
@@ -184,12 +194,13 @@ window.onclick = (event) => {
 function congratsModal() {
     let congratsModalBox = document.getElementById('congrats-modal');
     let span = congratsModalBox.querySelector('.close');
-
+    
     congratsModalBox.style.display = 'block';
 
     span.onclick = () => {
         congratsModalBox.style.display = 'none';
     }
+    console.log('congrats modal');
 }
 
 /**
@@ -220,6 +231,7 @@ function showExampleImage(chosenFolder) {
         imgElement.src = 'assets/images/colors/colors.webp';
         imgElement.alt = 'colors';
     }
+    console.log('example image displayed');
 }
 
 /**
@@ -240,6 +252,7 @@ function sound(src) {
         this.sound.pause();
         this.sound.currentTime = 0;
     };
+    console.log('sound buttons');
 }
 
 // create sound object
