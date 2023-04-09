@@ -42,8 +42,42 @@ function moveCounter() {
 
 }
 
-function squareMoves() {
+/**
+ *  The function checks if the clicked square is adjacent to the empty square by checking if the
+ *  difference in their indices is 1 or 3. If the clicked square is adjacent, the function swaps the positions
+ *  of the clicked square and the empty square in the photoArray array, and updates the emptySquareIndex variable
+ *  to the new position of the clicked square.
+ */
+function squareMoves(squareId) {
+    emptySquareIndex = photoArray.indexOf(8);
+    
+    // Get the index of the clicked square
+    const squareIndex = parseInt(squareId.replace("square", ""));
+    if (
+        emptySquareIndex - 1 === squareIndex ||
+        emptySquareIndex + 1 === squareIndex ||
+        emptySquareIndex - 3 === squareIndex ||
+        emptySquareIndex + 3 === squareIndex
+    ) {
+        
+        // Check if the clicked square is adjacent to the empty square
+        // Swap the clicked square with the empty square
+        const temp = photoArray[emptySquareIndex];
+        photoArray[emptySquareIndex] = photoArray[squareIndex];
+        photoArray[squareIndex] = temp;
 
+        // Update emptySquare to the new position of the clicked square
+        emptySquareIndex = squareIndex;
+
+        // Update src attributes of squares to reflect new positions
+        for (let i = 0; i < 9; i++) {
+            document.getElementById(
+                `square${i}`
+            ).src = `assets/images/${chosenFolder}/0${photoArray[i]}.webp`;
+        }
+        moveCounter();
+    }
+    checkWin();
 }
 
 function checkWin() {
