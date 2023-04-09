@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="author" content="Simon Paske">
+    <meta name="keywords" content="photography, copenhagen, abstract, puzzle, game, photo, challenge, visual">
+    <title>Photo Puzzle Game</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="h_text">PHOTO Puzzle GAME</h1>
+    </header>
+    <div id="game-container"></div>
+
+    <div id="modal-box">
+ 
+        <p class="modal-text"><br>
+            The 3x3 sliding puzzle game consists of a 3x3 grid with eight tiles and one empty
+            space.
+            <br>
+            <br>
+            The objective of the game is to rearrange the tiles in numerical order from left to right and top to
+            bottom, with the empty space in the bottom right corner.
+            <br>
+            <br>
+            To move a tile, click on it and it will slide into the empty space. Only tiles adjacent to the empty
+            space can be moved.
+            <br>
+            <br>
+            The game can be solved in a minimum of 18 moves, and there is no time limit.
+            <br>
+            <br>
+            If you get stuck, you can click on the "shuffle" button to randomly rearrange the tiles and start again.
+            Enjoy the challenge and have fun!
+        </p>
+    </div>
+ 
+    <select id="folder-select">
+        <option value="triangle">Triangle</option>
+        <option value="nature">Nature</option>
+        <option value="cubic">Square</option>
+        <option value="building">Building</option>
+        <option value="colors">Colors</option>
+    </select>
+    <div id="buttons">
+  
+        <button id="modal-button" type="button">Rules</button>
+        <button id="shuffle-button" type="button">Reshuffle</button>
+        <button id="start-button" type="button">Start Game</button>
+        </button>
+      
+    </div>
+    <script src="assets/script/script.js"></script>
+
+</body>
+
+
+</html>
