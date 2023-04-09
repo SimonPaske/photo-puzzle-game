@@ -45,6 +45,9 @@ function fillArray() {
     // Clear out any existing images in the game-container
     document.getElementById("game-container").innerHTML = "";
 
+    folderSelect = document.getElementById("folder-select");
+    chosenFolder = folderSelect.value;
+
     // Create 9 squares and add them to the game-container
     for (let i = 0; i < 9; i++) {
         let square = document.createElement("img");
@@ -52,16 +55,22 @@ function fillArray() {
 
         square.src = `assets/images/${chosenFolder}/0${photoArray[i]}.webp`;
         document.getElementById("game-container").appendChild(square);
+
         photoArray[i] = i;
-        
+        square.addEventListener("click", () => {
+            squareMoves(square.id);
+        });
     }
 }
+
 
 /**
  * This function randomizes the order of the photos in the game board.
  * It is called when the page loads.
  */
 function shuffleArray() {
+    document.getElementById("move-counter").textContent = 0;
+    countMove = 0;
 
     for (let i = 0; i < 9; i++) {
         photoArray.sort(() => Math.random() - 0.5);
@@ -90,13 +99,13 @@ function moveCounter() {
 
 /**
  *  The function checks if the clicked square is adjacent to the empty square by checking if the
- *  difference in their indices is 1 or 3. If the clicked square is adjacent, the function swaps the positions
+ * difference in their indices is 1 or 3. If the clicked square is adjacent, the function swaps the positions
  *  of the clicked square and the empty square in the photoArray array, and updates the emptySquareIndex variable
  *  to the new position of the clicked square.
  */
 function squareMoves(squareId) {
     emptySquareIndex = photoArray.indexOf(8);
-    
+
     // Get the index of the clicked square
     const squareIndex = parseInt(squareId.replace("square", ""));
     if (
@@ -105,7 +114,7 @@ function squareMoves(squareId) {
         emptySquareIndex - 3 === squareIndex ||
         emptySquareIndex + 3 === squareIndex
     ) {
-        
+
         // Check if the clicked square is adjacent to the empty square
         // Swap the clicked square with the empty square
         const temp = photoArray[emptySquareIndex];
@@ -135,6 +144,9 @@ function checkWin() {
 
     if (currentOrder.every((val, index) => val === correctOrder[index])) {
         replacePhotoArray();
+        congratsModal();
+
+        startGame.style.display = "block";
     }
 }
 
@@ -165,3 +177,17 @@ window.onclick = (event) => {
         modalBox.style.display = "none";
     }
 };
+
+/**
+ * This function show modal box with congratulation if the player wins the game.
+ */
+function congratsModal() {
+    let congratsModalBox = document.getElementById('congrats-modal');
+    let span = congratsModalBox.querySelector('.close');
+
+    congratsModalBox.style.display = 'block';
+
+    span.onclick = () => {
+        congratsModalBox.style.display = 'none';
+    }
+}
