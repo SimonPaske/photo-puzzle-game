@@ -38,8 +38,16 @@ function shuffleArray() {
     }
 }
 
+/**
+ * This function counts the square moves
+ */
 function moveCounter() {
-
+    countMove++; // Increment move counter
+    const moveCounter = document.getElementById("move-counter"); // Get move counter element
+    if (moveCounter) {
+        // Check if element exists
+        moveCounter.textContent = countMove; // Update move counter display
+    }
 }
 
 /**
