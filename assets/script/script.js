@@ -191,3 +191,33 @@ function congratsModal() {
         congratsModalBox.style.display = 'none';
     }
 }
+
+/**
+ * This function show the example photo of current puzzle game in the modal box
+ */
+function showExampleImage(chosenFolder) {
+    let containerElement = document.getElementById('modal-box');
+    let imgElement = containerElement.querySelector('img');
+    if (!imgElement) {
+        imgElement = document.createElement('img');
+        imgElement.className = 'win-photo';
+        containerElement.appendChild(imgElement);
+    }
+
+    if (chosenFolder === 'triangle') {
+        imgElement.src = 'assets/images/triangle/triangle.webp';
+        imgElement.alt = 'Triangle Neon Light';
+    } else if (chosenFolder === 'cubic') {
+        imgElement.src = 'assets/images/cubic/cubic.webp';
+        imgElement.alt = 'Cubic Neon Light';
+    } else if (chosenFolder === 'nature') {
+        imgElement.src = 'assets/images/nature/nature.webp';
+        imgElement.alt = 'Nature';
+    } else if (chosenFolder === 'building') {
+        imgElement.src = 'assets/images/building/building.webp';
+        imgElement.alt = 'building';
+    } else if (chosenFolder === 'colors') {
+        imgElement.src = 'assets/images/colors/colors.webp';
+        imgElement.alt = 'colors';
+    }
+}
