@@ -374,6 +374,7 @@ The live site link will be displayed at the top of the GitHub Pages section in a
 
 **W3SCHOOLS**
 * Code was used from [w3schools](https://www.w3schools.com/graphics/game_sound.asp) to add music.
+* Code was used from [w3schools](https://www.w3schools.com/howto/howto_css_modals.asp) to create a modal box.
 
 <br>
 

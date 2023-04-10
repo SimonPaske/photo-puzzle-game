@@ -165,7 +165,9 @@ function replacePhotoArray() {
     document.getElementById("game-container").innerHTML = `<img class="win-photo" src= 'assets/images/${chosenFolder}/${chosenFolder}.webp' alt="${chosenFolder}">`;
     console.log('win photo');
 }
-
+/**
+ * This code was used from www.w3schools.com
+ */
 let modalBox = document.getElementById("modal-box");
 let modalButton = document.getElementById("modal-button");
 let span = document.getElementsByClassName("close")[0];
