@@ -12,6 +12,7 @@ startGame.addEventListener("click", generatePuzzle);
 let shuffleButton = document.getElementById("shuffle-button");
 shuffleButton.addEventListener("click", shuffleArray);
 
+
 document.getElementById("folder-select");
 
 folderSelect.addEventListener("change", () => {
@@ -60,7 +61,7 @@ function fillArray() {
         square.addEventListener("click", () => {
             squareMoves(square.id);
             
-            console.log(square);
+            console.log('square index', square.id, square);
         });
     }
     console.log('fill array',photoArray);
@@ -86,7 +87,6 @@ function shuffleArray() {
     for (let i = 0; i < 9; i++) {
         document.getElementById(`square${i}`).src = `assets/images/${chosenFolder}/0${photoArray[i]}.webp`;
     }
-    
 }
 
 /**
@@ -134,7 +134,6 @@ function squareMoves(squareId) {
                 `square${i}`
             ).src = `assets/images/${chosenFolder}/0${photoArray[i]}.webp`;
         }
-        console.log('empty square', squareIndex);
         moveCounter();
     }
     checkWin();
@@ -199,7 +198,7 @@ function congratsModal() {
 
     span.onclick = () => {
         congratsModalBox.style.display = 'none';
-    }
+    };
     console.log('congrats modal');
 }
 
@@ -236,6 +235,8 @@ function showExampleImage(chosenFolder) {
 
 /**
  * This function add music file to html with loop play mode. Adds play and stop possibility.
+ * 
+ * this code was used from https://www.w3schools.com
  */
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -252,8 +253,9 @@ function sound(src) {
         this.sound.pause();
         this.sound.currentTime = 0;
     };
-    console.log('sound buttons');
+    
 }
+
 
 // create sound object
 var sound = new sound("assets/music/Blue_Dot_Sessions_-_Slow_Rollout.mp3");
@@ -269,3 +271,4 @@ let stopButton = document.getElementsByClassName('stop-button');
 stopButton.addEventListener("click", function () {
     sound.stop();
 });
+

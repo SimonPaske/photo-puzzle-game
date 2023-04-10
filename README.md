@@ -79,7 +79,7 @@ The button is on the home page. The user can start the game immediately by click
 ![Start button](docs/readme_images/start_button.png)
 
 * Puzzle rules
-  * Rules and example image is accessible by clicking on Rules button.
+  * Rules and example image is accessible by clicking on the Rules button.
   * The example image is changing regarding the selected puzzle.
 
 ![Triangle](docs/readme_images/rules_triangle.png)
@@ -143,7 +143,7 @@ The game can be solved in a minimum of 18 moves, and there is no time limit.
 * CSS
   * For Website styling was used CSS in an external file
 * Javascript
-  * The game play logic was created using Javascript in an external file.
+The gameplay logic was created using Javascript in an external file.
 * Visual Studio Code
   * The website was developed using Visual Studio Code Desktop version using SSH key
 * GitHub
@@ -164,7 +164,7 @@ The game can be solved in a minimum of 18 moves, and there is no time limit.
   * Favicon files were created at the favicon [converter](https://favicon.io/favicon-converter/)
 * Adobe Photoshop
   * Was used to convert photos to low-size images
-  * Was used to slice the image to small squares
+  * Was used to slice the image into small squares
 * Justinmind
   * Was used to create wireframes
 * Ionicons
@@ -180,7 +180,7 @@ The game can be solved in a minimum of 18 moves, and there is no time limit.
 
 ---
 
-All pages were tested to ensure responsiveness for screens from 300px up to 5000px. Responsive design was tested on Safari, Chrome and Firefox internet browsers.
+All pages were tested to ensure responsiveness for screens from 300px up to big screens. Responsive design was tested on Safari, Chrome and Firefox internet browsers.
 
 Steps for testing:
 
@@ -190,11 +190,10 @@ Steps for testing:
 
 Expected:
 
-No overlapping.
 No strecthed or pixelated images.
 
 Actual:
-The website behaves as expected except on the 404.html page at landscape orientation on smaller devices. (Details can be found in the Unifixed bugs part of the documentation).
+The website behaves as expected.
 
 <br>
 
@@ -225,7 +224,82 @@ Testing was focused to meet the following criteria:
 
 ---
 
-### Issues
+**Game play**
+
+The game goal is to reconstruct a scrambled image by swapping its different pieces in the correct position.
+
+When you first load the game, you will be presented with a randomized puzzle image. The puzzle consists of several 8 pieces of the original image that are shuffled and rearranged randomly.
+
+The game provides several tools to help you complete the puzzle. You can use the "Rules" button to display the original image, which can help you figure out the correct positioning of the pieces.
+
+The game keeps track of the movements you take to complete the puzzle, so you can challenge yourself to finish the game with as less movements as possible. Once you have completed the puzzle, you will be rewarded with a congratulatory message and the option to start a new puzzle.
+
+Overall, the game is a fun and challenging way to test your visual and spatial skills, as well as your patience and perseverance.
+
+---
+<br>
+
+The program includes an array called photoArray, which contains numbers representing the position of the image squares in the grid. The **Start Game button (generatePuzzle() function)** creates the 3x3 grid of image squares and initializes photoArray with values ranging from 0 to 8. The shuffleArray() function shuffles the elements of photoArray randomly to create a scrambled puzzle.
+
+The **squareMoves() function** is called when a square is clicked. It swaps the position of the clicked square with the empty square (represented by the index number 8 in photoArray) if they are adjacent, updates photoArray, and updates the src attributes of the image squares to reflect the new positions. The moveCounter() function increments a move counter and displays it on the screen
+
+The **checkWin() function** is called after every move to check if the game is finished. If the image squares are in the correct order (0-8), the function replaces the grid of image squares with a full-size picture of the finished puzzle and displays a congratulatory modal message.
+
+The **reshuffle button** is used to randomize the order of the photos in the game board. When the button is clicked, the shuffleArray() function is called, which loops through the photoArray and swaps each photo with another random photo. This creates a randomized order of photos in the game board, making the game more challenging. Move counter resets after each shuffle.
+
+The **sound buttons** are used to toggle the music on and off during the game. When the "sound on" button is clicked, the playSound() function is called, which plays a soundtrack. When the "sound off" button is clicked, the stopSound() function is called, which stops the ssoundtrack. This provides a more interactive experience for the user and adds to the overall enjoyment of the game
+
+---
+
+The game was tested to make sure, that the solved puzzle has the array of [0, 1, 2, 3, 4, 5, 6, 7, 8] and empty tile is the element at index 8 every time.
+
+Testing was done by printing to the console photoArray, square index and image destination in a folder structure. All functions and square info were printed as expected.
+
+The buttons were tested by clicking on them and making sure that they are assigned to functions / actions.
+Everything works as expected.
+
+---
+
+<br>
+
+### Validator testing
+
+<br>
+
+**HTML**
+  
+  no errors were returned when running via the official ![W3C validator](docs/testing/w3_html_validator.png)
+  
+<br>
+
+![404 HTML Validator](docs/testing/404_html.png)
+
+**CSS**
+
+no errors were returned when running via the official [W3C Jigsaw validator](https://jigsaw.w3.org)
+
+![CSS](docs/testing/w3_css_validator.png)
+
+<br>
+
+**Lighthouse**
+
+![lighthouse testing](docs/testing/lighthouse.png)
+
+**Javascript**
+
+---
+
+**JavaScript**
+ 
+Warnings were returned when running through [JShint validator](https://jshint.com/) 
+
+Warning messages: "...only available in ES6 (use 'esversion: 6')."
+
+---
+
+
+### Unfixed Bugs
 
 The game has a bug. It is possible to cheat in the game if squares are in this sequence. Unfortunately, I could not fix it.
 
@@ -250,16 +324,66 @@ X X X
 
 ---
 
-**Game play**
+## Deployment
 
-The game goal is to reconstruct a scrambled image by swapping its different pieces in the correct position.
+### Version Control
 
-When you first load the game, you will be presented with a randomized puzzle image. The puzzle consists of several 8 pieces of the original image that are shuffled and rearranged randomly.
+<br>
 
-The game provides several tools to help you complete the puzzle. You can use the "Rules" button to display the original image, which can help you figure out the correct positioning of the pieces.
+The site was created using Visual Studio Code (Desktop version). Code was pushed to Github to the remote repository "photo-puzzle-game".
 
-The game keeps track of the movements you take to complete the puzzle, so you can challenge yourself to finish the game with as less movements as possible. Once you have completed the puzzle, you will be rewarded with a congratulatory message and the option to start a new puzzle.
+Git commands were used via Git Easy (an extension for Visual Studio Code).
 
-Overall, the game is a fun and challenging way to test your visual and spatial skills, as well as your patience and perseverance.
+<br>
 
 ---
+
+### Deployment to Github Pages
+
+The website was deployed to Github pages following these steps:
+
+1. In the GitHub repository, click on the Settings icon
+
+![settings](docs/readme_images/deplayment_1.png)
+
+2. On the menu on the left side select "Pages"
+   
+![pages](docs/readme_images/deplayment_2.png)
+
+2. In the "Build and deployment" section select Source "Deploy from a branch".
+
+4. In the Branch section, select the "main" and "root" folders.
+
+![branch](docs/readme_images/deplayment_3.png)
+
+5. Click Save.
+
+<br>
+
+The live site link will be displayed at the top of the GitHub Pages section in a blue color.
+
+![visit page](docs/readme_images/deplayment_4.png)
+
+---
+
+## Credits
+
+**W3SCHOOLS**
+* Code was used from [w3schools](https://www.w3schools.com/graphics/game_sound.asp) to add music.
+
+<br>
+
+Inspiration for the Puzzle Game logic were taken from
+
+* [Webmound](https://www.webmound.com/shuffle-javascript-array/)
+* [Rocoderes](https://rocoderes.com/slide-puzzle-game-in-html-css-and-javascript/)
+* [Codingartistweb](https://codingartistweb.com/2023/03/sliding-image-puzzle-javascript/)
+
+## Media
+
+**Slow Rollout - Blue Dot Sessions**
+* Music [Soundtrack](<https://freemusicarchive.org/music/Blue_Dot_Sessions/RadioPink/Slow_Rollout>) was downloaded from Freemusicarchive.
+
+All photographs are copyrighted and belong to:
+
+ Simon Paske ©
