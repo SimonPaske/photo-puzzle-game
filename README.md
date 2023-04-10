@@ -18,6 +18,9 @@ You can challenge yourself with the puzzle --> [here](https://simonpaske.github.
 ![Buildings image](docs/readme_images/select_building.png)
 ![Colors image](docs/readme_images/select_colors.png)
 
+* Accesable rules and example of full size photo of current.
+![rules modal](docs/readme_images/rules_colors.png)  
+
 * Feedback to a user when the puzzle is finished.
 
 ![congrats](docs/readme_images/congrats_feedback.png)
