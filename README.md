@@ -19,7 +19,7 @@ You can challenge yourself with the puzzle --> [here](https://simonpaske.github.
 ![Colors image](docs/readme_images/select_colors.png)
 
 * Accessible rules and examples of a full-size photo of the current game.
-  
+
 ![rules modal](docs/readme_images/rules_colors.png)
 
 * Feedback to a user when the puzzle is finished.
@@ -226,9 +226,9 @@ Testing was focused to meet the following criteria:
 * All not textual content had alternative text or titles
 * Aria properties have been implemented correctly
 
----
+<br>
 
-**Game play**
+**Gameplay**
 
 The game goal is to reconstruct a scrambled image by swapping its different pieces in the correct position.
 
@@ -249,9 +249,9 @@ The **squareMoves() function** is called when a square is clicked. It swaps the 
 
 The **checkWin() function** is called after every move to check if the game is finished. If the image squares are in the correct order (0-8), the function replaces the grid of image squares with a full-size picture of the finished puzzle and displays a congratulatory modal message.
 
-The **reshuffle button** is used to randomize the order of the photos in the game board. When the button is clicked, the shuffleArray() function is called, which loops through the photoArray and swaps each photo with another random photo. This creates a randomized order of photos in the game board, making the game more challenging. Move counter resets after each shuffle.
+The **reshuffle button** is used to randomize the order of the photos on the game board. When the button is clicked, the shuffleArray() function is called, which loops through the photoArray and swaps each photo with another random photo. This creates a randomized order of photos on the game board, making the game more challenging. Move counter resets after each shuffle.
 
-The **sound buttons** are used to toggle the music on and off during the game. When the "sound on" button is clicked, the playSound() function is called, which plays a soundtrack. When the "sound off" button is clicked, the stopSound() function is called, which stops the ssoundtrack. This provides a more interactive experience for the user and adds to the overall enjoyment of the game
+The **sound buttons** are used to toggle the music on and off during the game. When the "sound on" button is clicked, the playSound() function is called, which plays a soundtrack. When the "sound off" button is clicked, the stopSound() function is called, which stops the soundtrack. This provides a more interactive experience for the user and adds to the overall enjoyment of the game
 
 ---
 
@@ -259,7 +259,7 @@ The game was tested to make sure, that the solved puzzle has the array of [0, 1,
 
 Testing was done by printing to the console photoArray, square index and image destination in a folder structure. All functions and square info were printed as expected.
 
-The buttons were tested by clicking on them and making sure that they are assigned to functions / actions.
+The buttons were tested by clicking on them and making sure that they are assigned to functions/actions.
 Everything works as expected.
 
 ---
@@ -271,9 +271,9 @@ Everything works as expected.
 <br>
 
 **HTML**
-  
+
   no errors were returned when running via the official ![W3C validator](docs/testing/w3_html_validator.png)
-  
+
 <br>
 
 ![404 HTML Validator](docs/testing/404_html.png)
@@ -295,36 +295,10 @@ no errors were returned when running via the official [W3C Jigsaw validator](htt
 ---
 
 **JavaScript**
- 
-Warnings were returned when running through [JShint validator](https://jshint.com/) 
+
+Warnings were returned when running through [JShint validator](https://jshint.com/)
 
 Warning messages: "...only available in ES6 (use 'esversion: 6')."
-
----
-
-
-### Unfixed Bugs
-
-The game has a bug. It is possible to cheat in the game if squares are in this sequence. Unfortunately, I could not fix it.
-
-C - tile
-0 - empty tile
-
-X X 0
-C X X
-X X X
-
-X X X
-X X 0
-C X X
-
-X X X
-X X C
-0 X X
-
-X X C
-0 X X
-X X X
 
 ---
 
@@ -351,7 +325,7 @@ The website was deployed to Github pages following these steps:
 ![settings](docs/readme_images/deplayment_1.png)
 
 2. On the menu on the left side select "Pages"
-   
+
 ![pages](docs/readme_images/deplayment_2.png)
 
 2. In the "Build and deployment" section select Source "Deploy from a branch".
@@ -373,12 +347,13 @@ The live site link will be displayed at the top of the GitHub Pages section in a
 ## Credits
 
 **W3SCHOOLS**
+
 * Code was used from [w3schools](https://www.w3schools.com/graphics/game_sound.asp) to add music.
 * Code was used from [w3schools](https://www.w3schools.com/howto/howto_css_modals.asp) to create a modal box.
 
 <br>
 
-Inspiration for the Puzzle Game logic were taken from
+Inspiration for the Puzzle Game logic was taken from
 
 * [Webmound](https://www.webmound.com/shuffle-javascript-array/)
 * [Rocoderes](https://rocoderes.com/slide-puzzle-game-in-html-css-and-javascript/)
@@ -387,6 +362,7 @@ Inspiration for the Puzzle Game logic were taken from
 ## Media
 
 **Slow Rollout - Blue Dot Sessions**
+
 * Music [Soundtrack](<https://freemusicarchive.org/music/Blue_Dot_Sessions/RadioPink/Slow_Rollout>) was downloaded from Freemusicarchive.
 
 All photographs are copyrighted and belong to:
